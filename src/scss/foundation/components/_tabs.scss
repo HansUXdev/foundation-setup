@@ -37,7 +37,6 @@ $tabs-vertical-navigation-margin-bottom: 1.25rem !default;
         list-style: none;
         float: $default-float;
         > a {
-          outline: none;
           display: block;
           background: {
             color: $tabs-navigation-bg-color;

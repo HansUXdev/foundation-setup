@@ -43,14 +43,7 @@ $switch-active-color: $primary-color !default;
 @mixin switch-base(
   $transition-speed:$switch-paddle-transition-speed,
   $transition-ease:$switch-paddle-transition-ease) {
-
-  padding: 0;
-  border: none;
-  position: relative;
-  outline: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+ 
 
   // Default label styles for type and transition
   label {
@@ -193,7 +186,10 @@ $switch-active-color: $primary-color !default;
   $paddle-bg: $switch-paddle-bg,
   $active-color: $switch-active-color,
   $radius:false,
-  $base-style:true) {
+    $base-style:true) {
+    padding: 0;
+    border: none;
+    position: relative;
     @include switch-base($transition-speed, $transition-ease);
     @include switch-size($height);
     @include switch-style($paddle-bg, $radius, $base-style);

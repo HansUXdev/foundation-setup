@@ -1,7 +1,10 @@
 {
   "name": "assemble-blog-theme",
   "dependencies": {
-  	"foundation":"*"
+    "foundation": "*"
   },
-  "private": "true"
+  "private": "true",
+  "devDependencies": {
+    "foundation": "5.4.6"
+  }
 }

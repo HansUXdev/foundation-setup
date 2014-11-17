@@ -4,10 +4,9 @@
   Foundation.libs.accordion = {
     name : 'accordion',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
-      content_class: 'content',
       active_class: 'active',
       multi_expand: false,
       toggleable: true,
@@ -29,12 +28,12 @@
             settings = accordion.data(self.attr_name(true) + '-init'),
             target = S('#' + this.href.split('#')[1]),
             aunts = $('> dd', accordion),
-            siblings = aunts.children('.'+settings.content_class),
+            siblings = aunts.children('.content'),
             active_content = siblings.filter('.' + settings.active_class);
         e.preventDefault();
 
         if (accordion.attr(self.attr_name())) {
-          siblings = siblings.add('[' + groupSelector + '] dd > .'+settings.content_class);
+          siblings = siblings.add('[' + groupSelector + '] dd > .content');
           aunts = aunts.add('[' + groupSelector + '] dd');
         }
 

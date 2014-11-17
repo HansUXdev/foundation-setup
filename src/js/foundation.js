@@ -278,7 +278,7 @@
   window.Foundation = {
     name : 'Foundation',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     media_queries : {
       small : S('.foundation-mq-small').css('font-family').replace(/^[\/\\'"]+|(;\s?})+|[\/\\'"]+$/g, ''),
@@ -630,13 +630,12 @@
   Foundation.libs.abide = {
     name : 'abide',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       live_validate : true,
       focus_on_invalid : true,
       error_labels: true, // labels with a for="inputId" will recieve an `error` class
-      error_class: 'error',
       timeout : 1000,
       patterns : {
         alpha: /^[a-zA-Z]+$/,
@@ -720,7 +719,7 @@
     reset : function (form) {
       form.removeAttr(this.invalid_attr);
       $(this.invalid_attr, form).removeAttr(this.invalid_attr);
-      $('.' + this.settings.error_class, form).not('small').removeClass(this.settings.error_class);
+      $('.error', form).not('small').removeClass('error');
     },
 
     validate : function (els, e, is_ajax) {
@@ -834,9 +833,9 @@
             this.S(el).removeAttr(this.invalid_attr);
             el.setAttribute('aria-invalid', 'false');
             el.removeAttribute('aria-describedby');
-            parent.removeClass(this.settings.error_class);
+            parent.removeClass('error');
             if (label.length > 0 && this.settings.error_labels) {
-              label.removeClass(this.settings.error_class).removeAttr('role');
+              label.removeClass('error').removeAttr('role');
             }
             $(el).triggerHandler('valid');
           } else {
@@ -844,14 +843,14 @@
             el.setAttribute('aria-invalid', 'true');
 
             // Try to find the error associated with the input
-            var errorElem = parent.find('small.'+this.settings.error_class, 'span.'+this.settings.error_class);
+            var errorElem = parent.find('small.error, span.error');
             var errorID = errorElem.length > 0 ? errorElem[0].id : "";
             if (errorID.length > 0) el.setAttribute('aria-describedby', errorID);
 
             // el.setAttribute('aria-describedby', $(el).find('.error')[0].id);
-            parent.addClass(this.settings.error_class);
+            parent.addClass('error');
             if (label.length > 0 && this.settings.error_labels) {
-              label.addClass(this.settings.error_class).attr('role', 'alert');
+              label.addClass('error').attr('role', 'alert');
             }
             $(el).triggerHandler('invalid');
           }
@@ -867,9 +866,9 @@
           valid = (el.is(':checked') || !required);
 
       if (valid) {
-        el.removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
+        el.removeAttr(this.invalid_attr).parent().removeClass('error');
       } else {
-        el.attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
+        el.attr(this.invalid_attr, '').parent().addClass('error');
       }
 
       return valid;
@@ -889,9 +888,9 @@
       // Has to count up to make sure the focus gets applied to the top error
       for (var i=0; i < count; i++) {
         if (valid) {
-          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
+          this.S(group[i]).removeAttr(this.invalid_attr).parent().removeClass('error');
         } else {
-          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
+          this.S(group[i]).attr(this.invalid_attr, '').parent().addClass('error');
         }
       }
 
@@ -905,12 +904,12 @@
 
       if (valid) {
         this.S(el).removeAttr(this.invalid_attr);
-        parent.removeClass(this.settings.error_class);
-        if (label.length > 0 && settings.error_labels) label.removeClass(this.settings.error_class);
+        parent.removeClass('error');
+        if (label.length > 0 && settings.error_labels) label.removeClass('error');
       } else {
         this.S(el).attr(this.invalid_attr, '');
-        parent.addClass(this.settings.error_class);
-        if (label.length > 0 && settings.error_labels) label.addClass(this.settings.error_class);
+        parent.addClass('error');
+        if (label.length > 0 && settings.error_labels) label.addClass('error');
       }
 
       return valid;
@@ -922,9 +921,9 @@
         valid = others.filter(':checked').length > 0;
 
       if (valid) {
-        el.removeAttr(this.invalid_attr).parent().removeClass(this.settings.error_class);
+        el.removeAttr(this.invalid_attr).parent().removeClass('error');
       } else {
-        el.attr(this.invalid_attr, '').parent().addClass(this.settings.error_class);
+        el.attr(this.invalid_attr, '').parent().addClass('error');
       }
 
       if (!doNotValidateOthers) {
@@ -945,10 +944,9 @@
   Foundation.libs.accordion = {
     name : 'accordion',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
-      content_class: 'content',
       active_class: 'active',
       multi_expand: false,
       toggleable: true,
@@ -970,12 +968,12 @@
             settings = accordion.data(self.attr_name(true) + '-init'),
             target = S('#' + this.href.split('#')[1]),
             aunts = $('> dd', accordion),
-            siblings = aunts.children('.'+settings.content_class),
+            siblings = aunts.children('.content'),
             active_content = siblings.filter('.' + settings.active_class);
         e.preventDefault();
 
         if (accordion.attr(self.attr_name())) {
-          siblings = siblings.add('[' + groupSelector + '] dd > .'+settings.content_class);
+          siblings = siblings.add('[' + groupSelector + '] dd > .content');
           aunts = aunts.add('[' + groupSelector + '] dd');
         }
 
@@ -1012,7 +1010,7 @@
   Foundation.libs.alert = {
     name : 'alert',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       callback: function (){}
@@ -1056,7 +1054,7 @@
   Foundation.libs.clearing = {
     name : 'clearing',
 
-    version: '5.4.7',
+    version: '5.4.6',
 
     settings : {
       templates : {
@@ -1615,7 +1613,7 @@
   Foundation.libs.dropdown = {
     name : 'dropdown',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       active_class: 'open',
@@ -1913,7 +1911,7 @@
     clear_idx : function () {
       var sheet = Foundation.stylesheet;
 
-      if (typeof this.rule_idx !== 'undefined') {
+      if (this.rule_idx) {
         sheet.deleteRule(this.rule_idx);
         sheet.deleteRule(this.rule_idx);
         delete this.rule_idx;
@@ -1942,7 +1940,7 @@
   Foundation.libs.equalizer = {
     name : 'equalizer',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       use_tallest: true,
@@ -2017,7 +2015,7 @@
   Foundation.libs.interchange = {
     name : 'interchange',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     cache : {},
 
@@ -2364,7 +2362,7 @@
   Foundation.libs.joyride = {
     name : 'joyride',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     defaults : {
       expose                   : false,     // turn on or off the expose feature
@@ -3280,7 +3278,7 @@
   Foundation.libs['magellan-expedition'] = {
     name : 'magellan-expedition',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       active_class: 'active',
@@ -3470,7 +3468,7 @@
   Foundation.libs.offcanvas = {
     name : 'offcanvas',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       open_method: 'move',
@@ -4021,7 +4019,7 @@
   Foundation.libs.orbit = {
     name: 'orbit',
 
-    version: '5.4.7',
+    version: '5.4.6',
 
     settings: {
       animation: 'slide',
@@ -4096,7 +4094,7 @@
   Foundation.libs.reveal = {
     name : 'reveal',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     locked : false,
 
@@ -4163,7 +4161,7 @@
           e.preventDefault();
 
           if (!self.locked) {
-            var settings = S('[' + self.attr_name() + '].open').data(self.attr_name(true) + '-init') || self.settings,
+            var settings = S('[' + self.attr_name() + '].open').data(self.attr_name(true) + '-init'),
                 bg_clicked = S(e.target)[0] === S('.' + settings.bg_class)[0];
 
             if (bg_clicked) {
@@ -4541,7 +4539,7 @@
   Foundation.libs.slider = {
     name : 'slider',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings: {
       start: 0,
@@ -4781,7 +4779,7 @@
   Foundation.libs.tab = {
     name : 'tab',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       active_class: 'active',
@@ -4859,7 +4857,7 @@
             // Check whether the location hash references a tab content div or
             // another element on the page (inside or outside the tab content div)
             var hash_element = S(hash);
-            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tabs-content')) {
+            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tab-content')) {
               // Tab content div
               self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + hash + ']').parent());
             } else {
@@ -4890,7 +4888,7 @@
           siblings = tab.siblings(),
           settings = tabs.data(this.attr_name(true) + '-init'),
           interpret_keyup_action = function(e) {
-            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js
+            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js 
 
             // define current, previous and next (possible) tabs
 
@@ -4999,7 +4997,7 @@
   Foundation.libs.tooltip = {
     name : 'tooltip',
 
-    version : '5.4.7',
+    version : '5.4.6',
 
     settings : {
       additional_inheritable_classes : [],
@@ -5300,7 +5298,7 @@
   Foundation.libs.topbar = {
     name : 'topbar',
 
-    version: '5.4.7',
+    version: '5.4.6',
 
     settings : {
       index : 0,

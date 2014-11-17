@@ -57,6 +57,7 @@ $button-group-border-width: 1px !default;
   }
   @else {
     margin: 0 -2px;
+    float: $default-float;
     display: inline-block;
   }
 
