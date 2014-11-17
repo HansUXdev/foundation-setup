@@ -25,8 +25,9 @@ module.exports = function(grunt) {
   grunt.loadTasks('grunt');
 
   // grunt.registerTask('sass', ['sass:production']);
+  grunt.registerTask('clear',['clean']);
 
-  grunt.registerTask('setup',['shell:bower','copy:foundation'])
+  grunt.registerTask('setup',['clean','shell:bower','copy:foundation','compass']);
 
 
   grunt.registerTask('default', ['connect','watch']);

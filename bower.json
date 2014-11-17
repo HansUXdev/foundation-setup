@@ -2,5 +2,6 @@
   "name": "assemble-blog-theme",
   "dependencies": {
   	"foundation":"*"
-  }
+  },
+  "private": "true"
 }

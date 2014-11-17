@@ -4,7 +4,11 @@ module.exports = function(grunt) {
 		dev: [
 		'src/css/**/*.css',
 		'src/js/**/*.js',
+		'src/scss/foundation/**/*.scss',
 		],
+		bower:[
+		'vendor/**/*',
+		]
   });
 
 
