@@ -12,9 +12,9 @@ module.exports = function(grunt) {
         '<%= config.live %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
       ]
     },
-    compass:{
+    scss:{
       files:['<%= config.sass %>/**/*.scss'],
-      tasks:['compass']
+      tasks:['sass']
     }
   });
 

@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
 
-  	grunt.config('sass', {
-      // css should have comments
+  	grunt.config(
+      // 'sass', // comment out to prevent conflict with libsass
+      {
       dev: {
         options:{
           compass:true,

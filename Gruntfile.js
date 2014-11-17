@@ -7,15 +7,8 @@ module.exports = function(grunt) {
     config: {
       live: 'src',
       src: 'src',
-      sass: 'src/scss/',
-      css: '<%= site.dest %>/assets/css',      
-      dist: '<%= site.dest %>',
-      prod: 'www/',
-      bootstrap: '<%= vendor %>/bootstrap/less',
-      jquery: '<%= vendor %>/jquery',
-      holder: '<%= vendor %>/holderjs',
-      highlight: '<%= vendor %>/highlightjs',
-      modernizr: '<%= vendor %>/modernizr'
+      sass: '<%= config.src %>/scss/',
+      css: '<%= config.src %>/css',      
     },
 
   });
@@ -27,7 +20,7 @@ module.exports = function(grunt) {
   // grunt.registerTask('sass', ['sass:production']);
   grunt.registerTask('clear',['clean']);
 
-  grunt.registerTask('setup',['clean','shell:bower','copy','compass']);
+  grunt.registerTask('setup',['clean','shell:bower','copy','sass']);
 
 
   grunt.registerTask('default', ['connect','watch']);
