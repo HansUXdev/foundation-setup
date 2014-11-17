@@ -6,7 +6,8 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '<%= config.css %>/css/foundation.css': '<%= config.sass %>/foundation.scss'
+                '<%= config.css %>/foundation.css': '<%= config.sass %>/foundation.scss',
+                '<%= config.css %>/normalize.css': '<%= config.sass %>/normalize.scss',
             }
         }
    });

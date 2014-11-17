@@ -17,13 +17,13 @@ module.exports = function(grunt) {
 
   grunt.loadTasks('grunt');
 
-  // grunt.registerTask('sass', ['sass:production']);
+
   grunt.registerTask('clear',['clean']);
 
   grunt.registerTask('setup',['clean','shell:bower','copy','sass']);
 
 
-  grunt.registerTask('default', ['setup']);
+  grunt.registerTask('default', ['setup','connect','watch']);
 
 
 };
