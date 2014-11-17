@@ -1,10 +1,7 @@
-// Foundation by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
 // toolbar styles
 
 .toolbar {
-	background: $oil;
+	background: #333;
 	width: 100%;
 	font-size: 0;
 	display: inline-block;
@@ -42,7 +39,7 @@
 		float: left;
 
 		&:hover {
-			background: rgba($white, 0.1);
+			background: rgba(#fff, 0.1);
 		}
 	}
 }		
@@ -51,13 +48,13 @@
 	font-size: 16px;
 	text-align: center;
 
-	label { color: $iron; }
+	label { color: #ccc; }
 
 	i {
 		font-size: 30px;
 		display: block;
 		margin: 0 auto;
-		color: $iron;
+		color: #ccc;
 		vertical-align: middle;
 	}
 

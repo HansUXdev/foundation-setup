@@ -1,7 +1,8 @@
 {
   "name": "foundation-setup",
-  "private": "true",
-  "devDependencies": {
-    "foundation": "~5.4.7"
-  }
+  "dependencies": {
+    "foundation": "*",
+    "foundation5-sass": "*"
+  },
+  "private": "true"
 }
