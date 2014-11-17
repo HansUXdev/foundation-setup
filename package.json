@@ -1,0 +1,30 @@
+{
+  "name": "simple-sass-server",
+  "description": "A simple server for livereload and sass.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hans McMurdy",
+    "url": "https://github.com/hansUXdev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hansUXdev/simple-sass-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hansUXdev/simple-sass-server/issues"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-shell": "^1.1.1",
+    "load-grunt-tasks": "*"
+  },
+  "keywords": [
+    "simple-server"
+  ]
+}
