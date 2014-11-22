@@ -1,8 +1,7 @@
 {
   "name": "foundation-setup",
   "dependencies": {
-    "foundation": "*",
-    "foundation5-sass": "*"
+    "foundation": "*"
   },
   "private": "true"
 }

@@ -14,7 +14,11 @@ module.exports = function(grunt) {
     },
     scss:{
       files:['<%= config.sass %>/**/*.scss'],
-      tasks:['sass']
+      tasks:[
+      'sass', 
+      // 'compass', // switch to compass
+      'autoprefixer'
+      ]
     }
   });
 

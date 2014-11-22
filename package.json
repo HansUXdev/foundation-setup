@@ -15,6 +15,7 @@
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-watch": "*",
     "grunt-sass": "^0.16.1",
+    "grunt-autoprefixer": "*",
     "grunt-shell": "^1.1.1",
     "load-grunt-tasks": "*"
   },

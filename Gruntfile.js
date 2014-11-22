@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     pkg   : grunt.file.readJSON('package.json'),
     vendor: grunt.file.readJSON('.bowerrc').directory,
 
+    // Configure your directory
     config: {
       live: 'src',
       src: 'src',
@@ -20,8 +21,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('clear',['clean']);
 
-  grunt.registerTask('setup',['clean','shell:bower','copy','sass']);
-
+  grunt.registerTask('setup',['clean','shell:bower','copy','sass','autoprefixer']);
 
   grunt.registerTask('default', ['setup','connect','watch']);
 
