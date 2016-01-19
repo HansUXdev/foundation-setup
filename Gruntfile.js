@@ -22,8 +22,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('setup',['clean','shell:bower','copy','sass']);
 
+  grunt.registerTask('server',['connect','watch']);
 
-  grunt.registerTask('default', ['setup','connect','watch']);
+
+  grunt.registerTask('default', ['setup','server']);
 
 
 };
