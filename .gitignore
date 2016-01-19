@@ -6,6 +6,9 @@ temp
 vendor
 dev
 www
+src/js
+src/css
+src/scss
 .sass-cache
 _gh_pages
 TODO.md
